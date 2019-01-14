@@ -23,10 +23,10 @@ def quadratic(x,w):
         a.append(y)
     return a
 
-def lin_re_derivative(x,y):
+def poly_re_derivative(x,y):
     return np.dot(np.linalg.pinv(np.dot(x.T,x)),np.dot(x.T,y))
 
-w = lin_re_derivative(x,y)
+w = poly_re_derivative(x,y)
 x0 = np.linspace(1,50)
 y_total = ""
 for i in range(degree + 1):

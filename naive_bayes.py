@@ -11,7 +11,7 @@ N = len(d1)
 train_data = np.array([d1,d2,d3,d4])
 train_label = np.array(['B','B','B','N'])
 
-#Probability for each p(B) and p(N)
+#Probability for each p(B) and p(N) based on occurence
 p_B = 3/4
 p_N = 1/4
 

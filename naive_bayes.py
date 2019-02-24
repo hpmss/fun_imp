@@ -36,7 +36,7 @@ prob_array_n = np.zeros(N)
 for i in range(N):
         prob_array_b[i] = (sum_array_b[i] + 1) / sum_b
 for i in range(N):
-        prob_array_n[i] = (d4[i] + 1) / 13
+        prob_array_n[i] = (sum_array_n[i] + 1) / sum_n
 
 #Predict on new data
 d6 = [0,1,0,0,0,0,0,1,1]

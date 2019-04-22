@@ -18,7 +18,7 @@ p_N = 1/4
 #Summing all word-occurence
 sum_array_b = np.zeros(N)
 sum_array_n = np.zeros(N)
-#Each class has N words
+#Laplace-smoothing
 sum_b = N
 sum_n = N
 for i in range(len(train_label)):

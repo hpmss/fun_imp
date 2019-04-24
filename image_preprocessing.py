@@ -2,10 +2,9 @@ import os
 import tensorflow as tf
 import numpy as np
 import cv2
-import threading
 
-PATH = "D:\\hpms\\mlearn\\vision\\models\\ConvolutionalNetwork\\data_sets\\train_data"
-SAVE_PATH = "D:\\hpms\\mlearn\\vision\\models\\ConvolutionalNetwork\\data_sets\\saved_data"
+PATH = "YOUR_PATH"
+SAVE_PATH = "YOUR_PATH"
 
 WIDTH = 224
 HEIGHT = 224
@@ -21,6 +20,7 @@ DOG_LABEL_STRING = 'dog'
 
 """
     Notes:
+        -> You can also use Threads if you want to spread datas to load faster...
         -> This implementation is used for loading the dataset "DOGS vs CATS" from Kaggle (25000 samples)
         -> This currently only works if SIZE and MINI_SIZE are a multiple of 2
         (Because i didnt test other SIZE and MINI_SIZE yet (´･ω･`) but i doubt they works... )

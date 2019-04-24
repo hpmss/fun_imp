@@ -37,7 +37,8 @@ def parse_equation(equation):
             elif group == '**':
                 parsed = parsed.replace(groups[0],'sqrt{%s}' % (groups[1]))
                 break
-            elif group == '*'
+            elif group == '*':
+                parsed = parsed
                 break
 
     return parsed

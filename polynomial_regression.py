@@ -1,7 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-""" y = x_N^4 * b4 + x_N^3 * b3 + x_N^2 * b2 + x_N*b1 + b0 (degree 4)
+
+"""
+    @hpms - 22/04/2019
+
+    y = x_N^4 * b4 + x_N^3 * b3 + x_N^2 * b2 + x_N*b1 + b0 (degree 4)
 
     Where 'x_N' is a sample and 'b' is a coefficient of the corresponding degree
 
@@ -16,7 +20,7 @@ import matplotlib.pyplot as plt
 """
 
 DEGREE = 5
-SIZE = 10
+SIZE = 50
 X_flat = np.random.randn(SIZE) # Size x 1
 X = X_flat.copy().reshape(SIZE,1)
 
@@ -28,9 +32,29 @@ for i in range(2,DEGREE + 1):
     X_power_i = X_power_i.reshape(SIZE,1)
     X = np.concatenate((X,X_power_i),axis = 1)
 
-# Solve for W using least-square
-# y = X*W => W = (X.T * X)^-1 * X.T * Y
+""" Solve for W using least-square => W'
 
+    X*W = y
+    => It is possible for W to have no solution
+    => Using least-square theorem : X*W' = y'
+    => Find W' such that X*W' = y' , y' is close to y
+
+    argmin || y - y' ||
+
+    => Find a vector y' that lies in col_space(X) and has min || y - y' ||
+    => Project y onto X = y'
+    => X*W' = proj_y_col(X)
+
+    => X*W' - y = proj_y_col(X) - y
+    => { Comp_ortho(A) : X*W' - y }
+    => {Null(A.T) : X*W' - y}
+
+    => A.T*(X*W' - y) = 0
+
+    => W' = (X.T * X)^-1 * X.T * Y
+
+
+"""
 W = np.linalg.pinv(np.dot(X.T,X)).dot(np.dot(X.T,Y))
 
 W_coeff = W[:,0]

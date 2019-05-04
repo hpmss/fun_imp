@@ -81,14 +81,15 @@ def grad_descent(w0,b0,epochs,learn_rate):
 
     return (w,b)
 
-learn_rate = 0.001
-epochs = 100000
+learn_rate = 0.01
+epochs = 1000000
 
 
 if __name__ == '__main__':
     grad_w,grad_b = gradient(w,b)
     numgrad_w,numgrad_b = numerical(w,b)
-
+    print(grad_w)
+    print(grad_b)
     dif_w = np.linalg.norm(grad_w - numgrad_w)
     dif_b = np.linalg.norm(grad_b - numgrad_b)
 

@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
       ∂w
 
     ∂L(w,b)
-    ------- = -y_n
+    ------- = -Sum(y_n)
       ∂b
 """
 np.random.seed(21)

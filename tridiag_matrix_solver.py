@@ -87,6 +87,8 @@ def U_decomposition():
             p_n = (r_vec[n,0] - M_mat[n,n-1] * p[n-1,0]) / (M_mat[n,n] - M_mat[n,n-1] * U[n-1,n])
             U[n,n+1] = y_n
             p[n,0] = p_n
+    print("Decomposed U matrix: \n",U)
+    print("Decomposed p vector: \n",p)
     solve_for_x_vec()
 
 def solve_for_x_vec():
@@ -96,7 +98,7 @@ def solve_for_x_vec():
     for _n in range(N-2,-1,-1):
         x_n = p[_n] - U[_n,_n + 1] * x_vec[_n + 1,0]
         x_vec[_n,0] = x_n
-    print("Result: \n" , x_vec)
+    print("Result for x: \n" , x_vec)
     print("Re-checking result:" ,"\n---Original r vector--- \n" , r_vec , "\n---Calculated r vector--- \n",np.dot(M_mat,x_vec))
 
 def example():

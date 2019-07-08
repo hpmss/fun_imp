@@ -11,6 +11,7 @@ import ast
     M is a square n x n matrix.
     x,r is a n x 1 vector.
 
+    This uses Thomas's algorithm .
     Stage 1: Apply LU decomposition ( LUx = r,where Ux = p => Lp = r ) with down-ward sweep straight into Ux = p
     Stage 2: Solve Ux = p straight for x
 

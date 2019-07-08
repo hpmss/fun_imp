@@ -1,8 +1,5 @@
 import numpy as np
-import subprocess
 import os
-import tempfile
-import time
 import ast
 
 """

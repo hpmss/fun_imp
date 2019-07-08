@@ -37,7 +37,7 @@ for kernel in ('sigmoid', 'poly', 'rbf'):
     XX, YY = np.mgrid[x_min:x_max:200j, y_min:y_max:200j]
     Z = clf.decision_function(np.c_[XX.ravel(), YY.ravel()])
 
-        # Put the result into a color plot
+    # Put the result into a color plot
     Z = Z.reshape(XX.shape)
     plt.figure(fignum, figsize=(4, 3))
     CS = plt.contourf(XX, YY, np.sign(Z), 200, cmap='jet', alpha = .2)
